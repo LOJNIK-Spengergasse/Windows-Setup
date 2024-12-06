@@ -13,5 +13,9 @@ choco install scrcpy
 echo Installing Android Debug Bridge via Chocolatey...
 choco install adb
 
+:: Upgrade
+choco upgrade scrcpy -y
+choco upgrade adb -y
+
 :: Confirm installation
 echo scrcpy installation complete.

@@ -11,5 +11,8 @@ if %errorlevel% neq 0 (
 echo Installing NodeJS via winget...
 winget install OpenJS.NodeJS.LTS
 
+:: Upgrade
+winget upgrade OpenJS.NodeJS.LTS
+
 :: Confirm installation
 echo NodeJS (LTS) installation complete. You can now run scrcpy from the command line.

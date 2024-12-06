@@ -11,5 +11,8 @@ if %errorlevel% neq 0 (
 echo Installing NodeJS via winget...
 winget install OpenJS.NodeJS :: STABLE VERSION, NOT LTS
 
+:: Upgrade
+winget upgrade OpenJS.NodeJS
+
 :: Confirm installation
 echo NodeJS installation complete.

@@ -11,5 +11,8 @@ if %errorlevel% neq 0 (
 echo Installing Git via winget...
 winget install --id Git.Git -e --source winget
 
+:: Upgrade
+winget upgrade Git.Git
+
 :: Confirm installation
 echo Git installation complete.

@@ -11,5 +11,8 @@ if %errorlevel% neq 0 (
 echo Installing Notepad++ via winget...
 winget install --id=Notepad++.Notepad++ -e
 
+:: Upgrade
+winget upgrade Notepad++.Notepad++
+
 :: Confirm installation
 echo Notepad++ installation complete.
