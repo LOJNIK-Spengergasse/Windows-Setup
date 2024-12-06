@@ -54,6 +54,10 @@ cd configs
 call ".\git_config.bat"
 cd ..
 
+:: Upgrade all
+winget upgrade -all
+choco upgrade all -y
+
 :: End script
 choco feature disable  -n allowGlobalConfirmation
 echo Done
