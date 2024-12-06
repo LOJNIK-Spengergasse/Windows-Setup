@@ -7,15 +7,25 @@ if %errorlevel% neq 0 (
 :BEGIN
 :: Opening working dir
 cd /d "%~dp0"
+cd installs
+
+:: Packet Managers (required for other installs)
+cd packet_managers
+call ".\winget\winget_install.bat"
+call ".\chocolatey\chocolatey_install.bat"
+cd ..
 :: Chocolatey allowGlobalConfirmation
 choco feature enable -n allowGlobalConfirmation
 
-:: Packet Managers (required for other installs)
-call ".\installs\packet_managers\winget\winget_install.bat"
-call ".\installs\packet_managers\chocolatey\chocolatey_install.bat"
-
 :: Applications
-call ".\installs\applications\scrcpy\scrcpy_install.bat"
+cd applications
+call ".\scrcpy\scrcpy_install.bat"
+cd ..
+
+:: Utilities
+cd utilities
+:: call ...
+cd ..
 
 :: End script
 choco feature disable  -n allowGlobalConfirmation
