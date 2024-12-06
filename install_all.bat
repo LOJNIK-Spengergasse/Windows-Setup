@@ -7,9 +7,17 @@ if %errorlevel% neq 0 (
 :BEGIN
 :: Opening working dir
 cd /d "%~dp0"
+if not exist "installs" (
+    echo Directory "installs" does not exist. Aborting script.
+    GOTO END
+)
 cd installs
 
 :: Packet Managers (required for other installs)
+if not exist "packet_managers" (
+    echo Directory "packet_managers" does not exist. Aborting script.
+    GOTO END
+)
 cd packet_managers
 call ".\winget\winget_install.bat"
 call ".\chocolatey\chocolatey_install.bat"
@@ -18,11 +26,19 @@ cd ..
 choco feature enable -n allowGlobalConfirmation
 
 :: Applications
+if not exist "applications" (
+    echo Directory "applications" does not exist. Aborting script.
+    GOTO END
+)
 cd applications
 call ".\scrcpy\scrcpy_install.bat"
 cd ..
 
 :: Utilities
+if not exist "utilities" (
+    echo Directory "utilities" does not exist. Aborting script.
+    GOTO END
+)
 cd utilities
 :: call ...
 cd ..
