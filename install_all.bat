@@ -40,7 +40,7 @@ if not exist "utilities" (
     GOTO END
 )
 cd utilities
-:: call ...
+call ".\nodejs\nodejs_install.bat" :: NOT LTS
 cd ..
 
 :: End script
