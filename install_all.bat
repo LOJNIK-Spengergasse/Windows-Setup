@@ -25,16 +25,6 @@ cd ..
 :: Chocolatey allowGlobalConfirmation
 choco feature enable -n allowGlobalConfirmation
 
-:: Applications
-if not exist "applications" (
-    echo Directory "applications" does not exist. Aborting script.
-    GOTO END
-)
-cd applications
-call ".\scrcpy\scrcpy_install.bat"
-call ".\notepad++\notepadPP_install.bat"
-cd ..
-
 :: Utilities
 if not exist "utilities" (
     echo Directory "utilities" does not exist. Aborting script.
@@ -43,6 +33,16 @@ if not exist "utilities" (
 cd utilities
 call ".\nodejs\nodejs_install.bat" :: NOT LTS
 call ".\git\git_install.bat"
+cd ..
+
+:: Applications
+if not exist "applications" (
+    echo Directory "applications" does not exist. Aborting script.
+    GOTO END
+)
+cd applications
+call ".\scrcpy\scrcpy_install.bat"
+call ".\notepad++\notepadPP_install.bat"
 cd ..
 
 :: Configuration

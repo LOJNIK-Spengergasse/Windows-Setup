@@ -14,4 +14,4 @@ echo Installing Android Debug Bridge via Chocolatey...
 choco install adb
 
 :: Confirm installation
-echo scrcpy installation complete. You can now run scrcpy from the command line.
+echo scrcpy installation complete.

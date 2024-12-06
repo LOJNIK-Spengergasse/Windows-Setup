@@ -12,4 +12,4 @@ echo Installing NodeJS via winget...
 winget install OpenJS.NodeJS :: STABLE VERSION, NOT LTS
 
 :: Confirm installation
-echo NodeJS installation complete. You can now run scrcpy from the command line.
+echo NodeJS installation complete.
