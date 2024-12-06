@@ -32,6 +32,7 @@ if not exist "applications" (
 )
 cd applications
 call ".\scrcpy\scrcpy_install.bat"
+call ".\notepad++\notepadPP_install.bat"
 cd ..
 
 :: Utilities
@@ -41,6 +42,16 @@ if not exist "utilities" (
 )
 cd utilities
 call ".\nodejs\nodejs_install.bat" :: NOT LTS
+call ".\git\git_install.bat"
+cd ..
+
+:: Configuration
+if not exist "configs" (
+    echo Directory "configs" does not exist. Aborting script.
+    GOTO END
+)
+cd configs
+call ".\git_config.bat"
 cd ..
 
 :: End script

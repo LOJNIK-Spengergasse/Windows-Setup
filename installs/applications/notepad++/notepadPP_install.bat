@@ -7,9 +7,9 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-:: Install nodejs using winget
-echo Installing NodeJS via winget...
-winget install OpenJS.NodeJS :: STABLE VERSION, NOT LTS
+:: Install Notepad++ using winget
+echo Installing Notepad++ via winget...
+winget install --id=Notepad++.Notepad++ -e
 
 :: Confirm installation
-echo NodeJS installation complete. You can now run scrcpy from the command line.
+echo Notepad++ installation complete.
