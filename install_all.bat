@@ -33,6 +33,8 @@ if not exist "utilities" (
 cd utilities
 call ".\nodejs\nodejs_install.bat" :: NOT LTS
 call ".\git\git_install.bat"
+call ".\git\dotnet_install.bat"
+call ".\git\python_install.bat"
 cd ..
 
 :: Applications
